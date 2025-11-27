@@ -5,8 +5,12 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
+  @Get() // o nome da rota raiz
   getHello(): string {
     return this.appService.getHello();
+  }
+  @Get('status') // rota /status
+  getStatus(): string {
+    return 'OK';
   }
 }
